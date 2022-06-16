@@ -145,13 +145,25 @@
                     </li>
 
                     <li>
-                        <label for=""></label> <button type="submit" id="submit"><a
+                        <label for=""></label> <button type="submit" id="submit" onclick="load()"><a
                                 href="link.html">Save</a></button><br><br>
                     </li>
                 </ul>
             </form>
         </fieldset>
     </div>
+    <script>function load(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+            if(this.readyState==4 && this.status==200){
+                console.log(this.responseText);
+            }
+        }
+    
+    
+        xhttp.open('GET',"readme.txt",true);
+        xhttp.send();
+    }</script>
 </body>
 
 </html>
